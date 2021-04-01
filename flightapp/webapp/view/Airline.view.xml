@@ -1,0 +1,25 @@
+<mvc:View
+    controllerName="sapui5.demo.flightapp.controller.Airline"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+>
+    <App>
+        <pages>
+            <Page title="Airline List">
+                <List id="airlineList"  items="{airline>/AirlineSet}" growing="true" growingThreshold="5"
+                        growingScrollToLoad="true" footerText="Fotter" noDataText="No Airline Data Found"
+                        >
+                    <items>
+                        <ObjectListItem icon="sap-icon://flight" iconDensityAware="true" 
+                            intro="{airline>Carrid}" title="{airline>Carrname}" numberUnit="{airline>Currcode}"
+                            press=".onPress" type="Navigation">
+                                <ObjectAttribute text="{airline>Url}" />
+                        </ObjectListItem>
+                    </items>
+                </List>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
