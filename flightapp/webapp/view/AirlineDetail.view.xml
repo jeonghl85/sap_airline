@@ -1,0 +1,14 @@
+<mvc:View
+    controllerName="sapui5.demo.flightapp.controller.AirlineDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+>
+    <App>
+        <Page title="Airline Detail">
+            <ObjectHeader intro="{airline>Carrid}" title="{airline>Carrname}"></ObjectHeader>
+        </Page>
+
+    </App>
+</mvc:View>
