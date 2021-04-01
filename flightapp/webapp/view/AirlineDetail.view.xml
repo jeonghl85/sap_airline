@@ -4,11 +4,41 @@
     displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+
 >
     <App>
         <Page title="Airline Detail"
         showNavButton="true" navButtonPress=".onNavBack">
-            <ObjectHeader intro="{airline>Carrid}" title="{airline>Carrname}"></ObjectHeader>
+            <ObjectHeader intro="{airline>Carrid}" title="{airline>Carrname}" />
+
+            <!-- <customHeader>
+                <Bar>
+                    <contentRight>
+                        <Button id="airlineCode" text="{airline>Carrid}" />
+                        <Button id="airlineName" text="{airline>Carrname}" />
+                        <Button id="airlineUrl" text="{airline>Url}" />
+                    </contentRight>
+                </Bar>
+            </customHeader>     -->
+
+            <VBox class="sapUiSmallMargin">
+                <f:SimpleForm id="airlineForm" editable="true" layout="ResponsiveGridLayout">
+                    <f:content>
+                        <Label text="Airline Code" />
+                        <Text id="arilineCode" text="{airline>Carrid}" />
+                        <Label text="Airline Name" />
+                        <Text id="arilineName" text="{airline>Carrname}" />
+                        <Label text="Airline Url" />
+                        <Text id="arilineUrl" text="{airline>Url}" />
+                        <Link validateUrl="true" href="{airline>Url}" text="{airline>Url}"></Link>
+                    </f:content>
+
+                </f:SimpleForm>
+            </VBox>
+
+        
+        
         </Page>
 
     </App>
