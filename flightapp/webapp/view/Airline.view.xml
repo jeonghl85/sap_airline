@@ -8,6 +8,11 @@
     <App>
         <pages>
             <Page title="Airline List">
+                <OverflowToolbar id="otb2">
+                    <Label text="Toolbar" />
+                    <ToolbarSpacer />
+                    <OverflowToolbarButton press=".onOpenDialog" tooltip="Add" text="Add" icon="sap-icon://add"/>
+                </OverflowToolbar>
                 <List id="airlineList"  items="{airline>/AirlineSet}" growing="true" growingThreshold="5"
                         growingScrollToLoad="true" footerText="Fotter" noDataText="No Airline Data Found"
                         >
