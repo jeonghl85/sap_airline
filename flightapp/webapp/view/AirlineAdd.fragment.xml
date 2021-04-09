@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog id="addAirline" title="Add Airline">
+        <VBox class="sapUiSmallMargin">
+            <f:SimpleForm id="addAirlineForm" editable="true" layout="ResponsiveLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+                <f:content>
+                    <Label text="항공사 코드" />
+                    <Input id="Carrid" />
+                    <Label text="항공사 명칭" />
+                    <Input  />
+                    <Label text="통화키" />
+                    <Select id="country">
+                        <items>
+                            <core:Item text="USD" key="USD"/>
+                            <core:Item text="JPY" key="JPY"/>
+                            <core:Item text="EUR" key="EUR"/>
+                        </items>
+                    </Select>
+                    <Label text="Url" />
+                    <Input  value="https://" />
+
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+
+
+
+
+        <!-- <beginButton>
+            <Button text="Save" press=".onSaveDialog" />
+        </beginButton> -->
+        <beginButton>
+            <Button text="Close" press=".onCloseDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"sapui5/demo/flightapp/model/models"
-], function (UIComponent, Device, models) {
+	"sapui5/demo/flightapp/model/models",
+	"./controller/AirlineAdd"
+], function (UIComponent, Device, models, AirlineAdd) {
 	"use strict";
 
 	return UIComponent.extend("sapui5.demo.flightapp.Component", {
@@ -26,6 +27,18 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 
+			// set dialog
+			this._airlineAdd = new AirlineAdd(this.getRootControl());
+
+		},
+
+		exit: function () {
+			this._airlineAdd.destroy();
+			delete this._airlineAdd;
+		},
+
+		openAirlineAdd: function () {
+			this._airlineAdd.open();
 		}
 	});
 });
